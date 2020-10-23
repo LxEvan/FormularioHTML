@@ -1,0 +1,16 @@
+<form action="">
+  <label for="Nombre">Nombre</label>
+  <input type="text" #vName name="" id="" placeholder="Escribe tu nombre"/>
+  <label for="dni">DNI</label>
+  <input type="text" #vDNI id="" placeholder="Escribe tu DNI"/>
+  <div [ngSwitch]="infotexto">
+    <div id="correcto" *ngSwitchCase="'Correcto'">Correcto</div>
+    <div id="incorrecto" *ngSwitchCase="'Incorrecto'">Incorrecto</div>
+  </div>
+  <label for="mensaje">Mensaje</label>
+  <textarea name="" #vMensaje id="comentario" placeholder="Escribe un mensaje"></textarea>
+  <div [ngSwitch]="infomensaje">
+    <div id="mensaje" *ngSwitchCase="'El mensaje es demasiado corto'">El mensaje es demasiado corto</div>
+  </div>
+  <input type="button" (click)="EnviarDatos(vName, vDNI.value, vMensaje)" value="Enviar">
+</form>
